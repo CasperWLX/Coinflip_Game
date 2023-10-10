@@ -1,6 +1,7 @@
 package com.hampus.demo;
 
 import com.hampus.demo.modules.GameLogic;
+import com.hampus.demo.modules.GameMessages;
 
 public class Main
 {
@@ -8,10 +9,10 @@ public class Main
     {
         int noOfWins;
 
-        System.out.println("Welcome to COINFLIPPER");
-        System.out.println("Time to flip the first coin");
-
         GameLogic game = new GameLogic();
+        GameMessages output = new GameMessages();
+
+        output.gameStart();
 
         do
         {

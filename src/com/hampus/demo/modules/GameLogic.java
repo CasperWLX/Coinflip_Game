@@ -7,21 +7,22 @@ public class GameLogic
     int coinFlip;
 
     UserInput input = new UserInput();
-    GameMessages Output = new GameMessages();
+    GameMessages output = new GameMessages();
 
 
     public int gameLoop()
     {
-        System.out.println("Pick heads(1) or Tails!(2)");
+        delayOutput(2);
+        output.headsOrTailsMessage();
         userChoice = numberScope(1, 2);
         coinFlip = flipCoin();
         delayOutput(1);
 
         if (userChoice == coinFlip)
         {
-            System.out.println("You got it right!\n You now have: " + noOfWins + " wins in a row");
             noOfWins++;
-            Output.messages(noOfWins);
+            System.out.println("You got it right!\nYou now have: " + noOfWins + " wins in a row");
+            output.roundMessage(noOfWins);
         }
         else
         {
@@ -33,16 +34,16 @@ public class GameLogic
 
     public static int flipCoin()
     {
-        System.out.println("Tossing coin...!");
+        System.out.println("Flipping the coin...!");
         delayOutput(4);
         int result = (int) (Math.random() * 2 + 1);
         if (result == 1)
         {
-            System.out.println("It landed on heads!");
+            System.out.println("It landed on Heads!");
         }
         else
         {
-            System.out.println("It landed on tails!");
+            System.out.println("It landed on Tails!");
         }
         return result;
     }

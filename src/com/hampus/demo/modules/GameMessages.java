@@ -2,7 +2,20 @@ package com.hampus.demo.modules;
 
 public class GameMessages
 {
-    public void messages(int noOfWins)
+    String lineDivider = "------------------------------";
+
+    public void gameStart()
+    {
+        System.out.printf("\t\tWelcome to\t\t\n%s\n\t\tCOINFLIPPER\t\t\n%s\n", lineDivider, lineDivider);
+        System.out.println("Time to flip the first coin");
+    }
+
+    public void headsOrTailsMessage()
+    {
+        System.out.printf("%s\nPick Heads(1) or Tails!(2)\n%s\n", lineDivider, lineDivider);
+    }
+
+    public void roundMessage(int noOfWins)
     {
         switch (noOfWins)
         {
