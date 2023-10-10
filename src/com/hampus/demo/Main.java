@@ -7,13 +7,16 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //Variables
         int noOfWins;
 
+        //Initializing objects
         GameLogic game = new GameLogic();
         GameMessages output = new GameMessages();
 
         output.gameStart();
 
+        //Game loop
         do
         {
             noOfWins = game.gameLoop();
